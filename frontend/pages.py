@@ -56,6 +56,24 @@ def render_main_app():
         st.title(f"🥟 Cantonese Teahouse")
         st.subheader(f"Chat with **{npc_name}** 💬")
     
+    # GitHub Star 按钮
+    st.markdown(
+        """
+        <style>
+        .github-badge {
+            display: inline-block;
+            margin: 10px 0;
+        }
+        </style>
+        <div class="github-badge">
+            <a href="https://github.com/fuyusaka1007/cantoplay" target="_blank" style="text-decoration: none;">
+                <img src="https://img.shields.io/github/stars/fuyusaka1007/cantoplay?style=social" alt="Star on GitHub">
+            </a>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    
     # 渲染进度条和任务信息
     render_progress_bar(lang, t)
     render_mission_info(scenario_key, lang, t)
