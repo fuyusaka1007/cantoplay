@@ -1,4 +1,4 @@
-# LinguaQuest: 粤韵茶楼 v2.0
+# Cantoplay: 粤韵茶楼
 
 基于Streamlit的粤语学习游戏应用 - 模块化重构版本
 
@@ -95,39 +95,6 @@ api_key = "your-mimo-api-key"  # 用于TTS粤语语音合成，申请地址：ht
    - 完成任务条件（AI判断）
    - 积累足够积分
 5. **粤语朗读**: AI回复后自动生成粤语语音，点击播放器听取发音
-
-## 🔧 部署至ECS
-
-### 1. 打包项目
-
-```bash
-cd /path/to/cantoplayv2
-zip -r cantoplayv2.zip . -x "*.pyc" -x "__pycache__/*" -x ".git/*"
-```
-
-### 2. 上传至ECS
-
-```bash
-scp cantoplayv2.zip root@your-ecs-ip:/opt/
-```
-
-### 3. 在ECS上部署
-
-```bash
-ssh root@your-ecs-ip
-cd /opt
-unzip cantoplayv2.zip -d cantoplayv2
-cd cantoplayv2
-pip install -r requirements.txt
-
-# 配置secrets.toml
-mkdir -p .streamlit
-# 创建并编辑 .streamlit/secrets.toml
-
-# 使用systemd或screen运行
-screen -S cantoplay
-streamlit run main.py --server.port 8501 --server.address 0.0.0.0
-```
 
 ## 📝 开发说明
 
